@@ -62,27 +62,27 @@ first_player = min(value[p1hand[0]], value[p2hand[0]], value[p3hand[0]], value[p
 if value[p1hand[0]] == goes_first:
             print ("Player 1 deals the cards because they have the lowest card.")
             first_player = 1
-        elif value[p2hand[0]] == goes_first:
+elif value[p2hand[0]] == goes_first:
             print (" Player 2 deals the cards because they have the lowest card.")
             first_Player = 2 
-        elif value[p3hand[0]] == goes_first:
+elif value[p3hand[0]] == goes_first:
             print (" Player 3 deals the cards because they have the lowest card.")
             first_player = 3   
-        elif value[p4hand[0]] == goes_first:
+elif value[p4hand[0]] == goes_first:
             print ("Player 4 deals the cards because they have the lowest card.")
             first_player = 4
-        else:
+else:
              print ("I guess something happened. Please restart the program.")
 
 
 if first_player == 1:
-deal_card()
+    deal_card()
 elif first_player == 2:
-deal_card()	 
+    deal_card()	 
 elif first_player == 3:
-deal_card
+    deal_card
 elif first_player == 4:
-deal_card
+    deal_card
 else:
 	print ("Something went wrong. Try again.")
 
