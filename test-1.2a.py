@@ -42,23 +42,26 @@ card_dealt = deck[0]
 
 
 
+
+p1hand = []
+p2hand = []
+p3hand = []
+p4hand = []
+card_dealt = 0
+    
 def dealer():
-    p1hand = []
-    p2hand = []
-    p3hand = []
-    p4hand = []
-    card_dealt = 0
-    while card_dealt < 1:
-        p1hand.append(full_deck[0])
-        full_deck.remove(full_deck[0])
-        p2hand.append(full_deck[0])
-        full_deck.remove(full_deck[0])
-        p3hand.append(full_deck[0])
-        full_deck.remove(full_deck[0])
-        p4hand.append(full_deck[0])
-        full_deck.remove(full_deck[0])
-        card_dealt += 1
-first_player = min(value[p1hand[0]], value[p2hand[0]], value[p3hand[0]], value[p4hand[0]]) 
+        while card_dealt < 1:
+            p1hand.append(full_deck[0])
+            full_deck.remove(full_deck[0])
+            p2hand.append(full_deck[0])
+            full_deck.remove(full_deck[0])
+            p3hand.append(full_deck[0])
+            full_deck.remove(full_deck[0])
+            p4hand.append(full_deck[0])
+            full_deck.remove(full_deck[0])
+            card_dealt += 1
+
+first_player = min([p1hand[0]], [p2hand[0]], [p3hand[0]], [p4hand[0]]) 
 if value[p1hand[0]] == goes_first:
             print ("Player 1 deals the cards because they have the lowest card.")
             first_player = 1
@@ -132,7 +135,7 @@ def ask():
         print ("Go Fish!")
     else:
         print ("That's not an answer!")
-		start_game()
+        start_game()
 ask()
 dealer()
 deal_card()
