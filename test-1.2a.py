@@ -56,13 +56,13 @@ card_dealt = 0
     
 def dealer():
         while card_dealt < 1:
-            p1hand.append(full_deck[0])
+            p1hand = full_deck[0]
             full_deck.remove(full_deck[0])
-            p2hand.append(full_deck[0])
+            p2hand = full_deck[0]
             full_deck.remove(full_deck[0])
-            p3hand.append(full_deck[0])
+            p3hand = full_deck[0]
             full_deck.remove(full_deck[0])
-            p4hand.append(full_deck[0])
+            p4hand = full_deck[0]
             full_deck.remove(full_deck[0])
             card_dealt += 1
 
