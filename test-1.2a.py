@@ -23,8 +23,12 @@ Object Of The Game: The objective of the game is to win the most books of cards.
    Go Fish! As long as you succeed in getting cards, you can keep asking players for cards. When a player gets a book, that book should be verified by the others and placed down. Turns go to the left.\n
    Finishing The Game: When all the books in the game have been won, the winner is the player with the most amount of books.\n Good Luck!
    ''')
-else:
+
+   # these lines state the rules^
+elif rules == 1:
     print ("Great, you're ready to play! Good Luck!")
+else:
+    print ("Restart the program, you made a mistake.")
     
 
 def are_you_ready():
@@ -35,6 +39,7 @@ def are_you_ready():
         print ("We are ready to start")
     
 deck = ["A", "K", "Q", "J", "10", "9", "8", "7", "6", "5", "4", "3", "2"]
+value = {"Two":2, "Three":3, "Four":4, "Five":5, "Six":6, "Seven":7, "Eight":8, "Nine":9, "Ten":10, "Jack":11, "Queen":12, "King":13, "Ace":14}
 full_deck = deck * 4 
 card_dealt = deck[0]
 #SEE WHO GOES FIRST
@@ -61,17 +66,17 @@ def dealer():
             full_deck.remove(full_deck[0])
             card_dealt += 1
 
-first_player = min([p1hand[0]], [p2hand[0]], [p3hand[0]], [p4hand[0]]) 
-if value[p1hand[0]] == goes_first:
+first_player = min(value[p1hand], value[p2hand], value[p3hand], value[p4hand]) 
+if value[p1hand] == goes_first:
             print ("Player 1 deals the cards because they have the lowest card.")
             first_player = 1
-elif value[p2hand[0]] == goes_first:
+elif value[p2hand] == goes_first:
             print (" Player 2 deals the cards because they have the lowest card.")
             first_Player = 2 
-elif value[p3hand[0]] == goes_first:
+elif value[p3hand] == goes_first:
             print (" Player 3 deals the cards because they have the lowest card.")
             first_player = 3   
-elif value[p4hand[0]] == goes_first:
+elif value[p4hand] == goes_first:
             print ("Player 4 deals the cards because they have the lowest card.")
             first_player = 4
 else:
