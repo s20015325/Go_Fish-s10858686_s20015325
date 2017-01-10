@@ -52,9 +52,10 @@ p1hand = []
 p2hand = []
 p3hand = []
 p4hand = []
-card_dealt = 0
+
     
 def dealer():
+        card_dealt = 0
         while card_dealt < 1:
             p1hand = full_deck[0]
             full_deck.remove(full_deck[0])
@@ -66,33 +67,33 @@ def dealer():
             full_deck.remove(full_deck[0])
             card_dealt += 1
 
-first_player = min(value[p1hand], value[p2hand], value[p3hand], value[p4hand]) 
-if value[p1hand] == goes_first:
+        first_player = min(value[p1hand], value[p2hand], value[p3hand], value[p4hand]) 
+        if value[p1hand] == goes_first:
             print ("Player 1 deals the cards because they have the lowest card.")
             first_player = 1
-elif value[p2hand] == goes_first:
+        elif value[p2hand] == goes_first:
             print (" Player 2 deals the cards because they have the lowest card.")
             first_Player = 2 
-elif value[p3hand] == goes_first:
+        elif value[p3hand] == goes_first:
             print (" Player 3 deals the cards because they have the lowest card.")
             first_player = 3   
-elif value[p4hand] == goes_first:
+        elif value[p4hand] == goes_first:
             print ("Player 4 deals the cards because they have the lowest card.")
             first_player = 4
-else:
+        else:
              print ("I guess something happened. Please restart the program.")
 
 
-if first_player == 1:
-    deal_card()
-elif first_player == 2:
-    deal_card()	 
-elif first_player == 3:
-    deal_card
-elif first_player == 4:
-    deal_card
-else:
-	print ("Something went wrong. Try again.")
+        if first_player == 1:
+            deal_card()
+        elif first_player == 2:
+            deal_card()	 
+        elif first_player == 3:
+            deal_card
+        elif first_player == 4:
+            deal_card
+        else:
+            print ("Something went wrong. Try again.")
 
 
 		
@@ -113,7 +114,7 @@ def deal_card ():
         p4hand.append(full_deck[0])
         full_deck.remove(full_deck[0])
         card_dealt += 1
-
+asking_player = []
 def ask():
     player_turn = 0
     if player_turn == 1:
@@ -133,15 +134,15 @@ def ask():
         asking_player.append(card_dealt)
         ask_player = (input("Who do you want to ask for a card?[p1hand, p2hand, p3hand, p4hand]"))
         ask_card = (input("What card do you want?"))
-    if ask == "yes":
-        ask_player.remove(card_dealt)
-        asking_player.append(card_dealt)
-    elif ask == "no":
-        print ("Go Fish!")
-    else:
-        print ("That's not an answer!")
-        start_game()
+        if ask == "yes":
+            ask_player.remove(card_dealt)
+            asking_player.append(card_dealt)
+        elif ask == "no":
+            print ("Go Fish!")
+        else:
+            print ("That's not an answer!")
+       
 ask()
-dealer()
+
 deal_card()
-start_game
+
